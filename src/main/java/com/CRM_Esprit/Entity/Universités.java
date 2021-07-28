@@ -28,10 +28,11 @@ public class Universités implements Serializable{
 	private String Details;
 	
 	
+
+
 	@JsonIgnore
 	@OneToMany(cascade=CascadeType.ALL,mappedBy="Universités")
-	private Set<Etudiant> etudiant ;
-
+	private Set<Postulation> post ;
 	
 	public int getIduniver() {
 		return iduniver;
@@ -41,13 +42,6 @@ public class Universités implements Serializable{
 		this.iduniver = iduniver;
 	}
 
-	public Set<Etudiant> getEtudiant() {
-		return etudiant;
-	}
-
-	public void setEtudiant(Set<Etudiant> etudiant) {
-		this.etudiant = etudiant;
-	}
 
 	public String getNom_univer() {
 		return nom_univer;

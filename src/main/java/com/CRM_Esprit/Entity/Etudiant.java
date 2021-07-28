@@ -15,11 +15,14 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 
@@ -47,9 +50,11 @@ public class Etudiant implements Serializable {
 	
 	private int score;
 	
-	@ManyToOne
-    @JoinColumn(name="iduniver")
-	Universités Universités; 
+	@JsonIgnore
+	@OneToMany(cascade=CascadeType.ALL,mappedBy="etud")
+	private Set<Postulation> post ;
+	
+	
 	
 	@ManyToMany(fetch = FetchType.LAZY,
             cascade = {
