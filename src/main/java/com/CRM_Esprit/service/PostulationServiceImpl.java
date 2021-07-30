@@ -38,4 +38,8 @@ public int Postuler(Postulation pos, int id_univer) {
 		     posrep.save(pos);
 			return id_univer;
 }
+
+public List<Postulation> getAllPostulationbyscore() {
+	return posrep.getAllPostulationbyscore();
+}
 		}
