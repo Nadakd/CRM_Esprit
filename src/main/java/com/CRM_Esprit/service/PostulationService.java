@@ -10,4 +10,6 @@ public interface PostulationService {
 	public int Postuler(Postulation pos, int id_univer) ;
 	
 	public List<Postulation> getAllPostulationbyscore(int id_univer);
+	
+	public void affectation(int id_univer);
 }

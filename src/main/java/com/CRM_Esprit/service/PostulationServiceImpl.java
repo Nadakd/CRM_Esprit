@@ -43,5 +43,9 @@ public List<Postulation> getAllPostulationbyscore(int id_univer) {
 	return posrep.getAllPostulationbyscore(id_univer);
 }
 
+public void affectation(int id_univer) {
+	posrep.affectation(id_univer);
+	
+}
 
 		}

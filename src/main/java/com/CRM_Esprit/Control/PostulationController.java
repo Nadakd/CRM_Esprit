@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -36,4 +37,12 @@ public class PostulationController {
 	public List<Postulation> getAllPublicationByDate(@PathVariable("id_univer") int id_univer) {
 	return posservice.getAllPostulationbyscore(id_univer);
 	}
+	
+	
+	@PutMapping(value = "/affectation/{id_univer}") 
+    @ResponseBody
+	public void affectation(@PathVariable("id_univer") int id_univer) {
+		posservice.affectation(id_univer);
+					
+				}
 }
