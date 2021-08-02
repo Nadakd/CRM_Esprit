@@ -39,7 +39,9 @@ public int Postuler(Postulation pos, int id_univer) {
 			return id_univer;
 }
 
-public List<Postulation> getAllPostulationbyscore() {
-	return posrep.getAllPostulationbyscore();
+public List<Postulation> getAllPostulationbyscore(int id_univer) {
+	return posrep.getAllPostulationbyscore(id_univer);
 }
+
+
 		}

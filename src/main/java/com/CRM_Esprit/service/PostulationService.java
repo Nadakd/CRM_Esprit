@@ -9,5 +9,5 @@ public interface PostulationService {
 	
 	public int Postuler(Postulation pos, int id_univer) ;
 	
-	public List<Postulation> getAllPostulationbyscore();
+	public List<Postulation> getAllPostulationbyscore(int id_univer);
 }

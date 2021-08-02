@@ -31,9 +31,9 @@ public class PostulationController {
 		 
 		}
 	
-	@GetMapping("/getAllPostulationbyscore")
+	@GetMapping("/getAllPostulationbyscore/{id_univer}")
 	@ResponseBody
-	public List<Postulation> getAllPublicationByDate() {
-	return posservice.getAllPostulationbyscore();
+	public List<Postulation> getAllPublicationByDate(@PathVariable("id_univer") int id_univer) {
+	return posservice.getAllPostulationbyscore(id_univer);
 	}
 }
