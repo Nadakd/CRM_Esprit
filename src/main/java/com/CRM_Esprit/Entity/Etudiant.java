@@ -48,12 +48,15 @@ public class Etudiant implements Serializable {
 	
 	private String specialite;
 	
-	private int score;
+	private float score;
 	
 	@JsonIgnore
 	@OneToMany(cascade=CascadeType.ALL,mappedBy="etud")
 	private Set<Postulation> post ;
 	
+	@JsonIgnore
+	@OneToMany(cascade=CascadeType.ALL,mappedBy="etud")
+	private Set<Matiere> matiere ;
 	
 	
 	@ManyToMany(fetch = FetchType.LAZY,
@@ -107,12 +110,13 @@ public class Etudiant implements Serializable {
 	public void setNom_prenom(String nom_prenom) {
 		this.nom_prenom = nom_prenom;
 	}
-	public int getScore() {
+	public float getScore() {
 		return score;
 	}
-	public void setScore(int score) {
+	public void setScore(float score) {
 		this.score = score;
 	}
+	
 	public Etudiant() {
 		super();
 		// TODO Auto-generated constructor stub

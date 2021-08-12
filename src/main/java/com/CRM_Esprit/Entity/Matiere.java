@@ -10,7 +10,9 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Matiere implements Serializable {
@@ -25,6 +27,11 @@ public class Matiere implements Serializable {
 	
 	@Column(name="note")
 	private float note;
+	
+	@ManyToOne
+    @JoinColumn(name="idetud")
+	Etudiant etud;
+	
 	
 	 @ManyToMany(fetch = FetchType.LAZY,
 	            cascade = {
